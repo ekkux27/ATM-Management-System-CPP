@@ -5,13 +5,14 @@ int pass(){
     int pass;
     cout<<"Enter your pin (sample pin is 0000)"<<endl;
     cin>>pass;
-    if (pass==0000)
-    {
-        cout<<"You have succesfully logged in"<<endl;
-    }
-    else{
-        cout<<"Wrong PIN"<<endl;  
-    }
+    if (pass == 0000){
+    cout << "You have successfully logged in" << endl;
+    return 1;
+}
+else{
+    cout << "Wrong PIN" << endl;
+    return 0;
+}
     
     return 0;
 }
@@ -34,9 +35,11 @@ int balance(){
 }
 int main() {
     
-    pass();
+    int login = pass();
+
+if (login == 1){
     balance();
     menu();
-
+}
     return 0;
 }
